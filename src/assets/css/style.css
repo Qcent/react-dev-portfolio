@@ -733,7 +733,10 @@
         }
         /* END OF CONTACT ME Styling */
         /* MESSING AROUND  */
-        
+        footer{
+            height: 3.2rem;
+            padding-top: .6rem;
+        }
         .contact-links li:nth-child(2) {
             /* put the 2nd child in contact links "Cave Wall" last in list 
     /* default order value is 0 */
@@ -808,13 +811,13 @@
                 /*  new margins on the about me text */
                 margin: 0 5%;
             }
-            main section:nth-child(2) {
+            main {
                 /* z-index: -2; */
                 /*  new background for about work section */
                 background: rgba(15, 14, 12, .8);
                 background: linear-gradient(200deg, rgba(15, 14, 12, 1) 0%, rgba(92, 88, 84, 1) 100%);
             }
-            main section:nth-child(3) {
+            footer {
                 /*z-index: -3;
                 /*  new background for contact me section */
                 background: rgba(36, 26, 24, .8);
