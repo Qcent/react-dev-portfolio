@@ -1,0 +1,1051 @@
+        /* load a nice thin font from an online google repository */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+        /* Set some default style rules */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-decoration: none;
+            /* prevents ugly and undesireable highlighting */
+            user-select: none;
+        }
+        /* utility classes */
+        
+        .love {
+            position: relative;
+            top: 0;
+        }
+        
+        .love:hover::after {
+            opacity: .6;
+            position: absolute;
+            top: -.2em;
+            right: 0.85em;
+            content: "❤️";
+            transform: scale(2);
+        }
+        /* */
+        
+        body {
+            background-color: var(--background-col);
+        }
+        
+        p {
+            /* spacing based on text size */
+            margin-bottom: 1em;
+            /* only paragraph text can be selected and copied */
+            user-select: text;
+        }
+        /* Define custom properties for site colors */
+        /* site colors */
+        
+         :root {
+            --background-col: rgb(234, 234, 233);
+            --dark-text: rgb(43, 46, 53);
+            --light-text: rgb(135, 197, 198);
+            --norm-text: rgb(60, 78, 107);
+        }
+        /* END OF COUSTOM PROPERTIES */
+        /* HEADER and Nav Styling */
+        
+        header,
+        nav ul {
+            /* using flex box for all positioning */
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        /* Set background color and padding around hedder text */
+        
+        header {
+            background-color: var(--dark-text);
+            /* padded out vertically from h1 */
+            padding: 5px 0;
+        }
+        
+        header h1 {
+            background-color: var(--light-text);
+            color: var(--dark-text);
+            /* padding extends the blue background on text */
+            padding-left: 4.5vw;
+            /* using screen width scaling for fun */
+            padding-right: 1.7vw;
+            font-size: 50px;
+        }
+        /* Visual Effect for Header */
+        
+        .spinner-effect {
+            /* why not try and spice things up with the power of css animation*/
+            /* set some  animation properties*/
+            animation: 4s infinite;
+            display: inline-block;
+        }
+        
+        .spinner-effect.delay {
+            animation-delay: .5s;
+        }
+        
+        h2:hover .spinner-effect,
+        h1:hover .spinner-effect,
+        .hero-text:hover .spinner-effect {
+            animation-name: spin-text;
+        }
+        
+        h2:hover .spinner-effect.reverse,
+        h1:hover .spinner-effect.reverse {
+            animation-name: spin-text-cc;
+        }
+        
+        h2:hover .spinner-effect.spin-3d,
+        h1:hover .spinner-effect.spin-3d {
+            animation-name: spin-3d;
+        }
+        /****************************/
+        /* ANIMATION FRAMES         */
+        
+        @keyframes spin-text {
+            0% {
+                color: var(--dark-text);
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            12% {
+                color: var(--norm-text);
+            }
+            22% {
+                color: var(--light-text);
+            }
+            33% {
+                color: var(--dark-text);
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+            100% {
+                color: var(--norm-text);
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        /* counter-clockwise */
+        
+        @keyframes spin-text-cc {
+            0% {
+                color: var(--dark-text);
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            12% {
+                color: var(--norm-text);
+            }
+            22% {
+                color: var(--light-text);
+            }
+            33% {
+                color: var(--dark-text);
+                -webkit-transform: rotate(-360deg);
+                transform: rotate(-360deg);
+            }
+            100% {
+                color: var(--norm-text);
+                -webkit-transform: rotate(-360deg);
+                transform: rotate(-360deg);
+            }
+        }
+        /* 3D spin */
+        
+        @keyframes spin-3d {
+            0% {
+                color: var(--dark-text);
+                -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+            }
+            12% {
+                color: var(--norm-text);
+            }
+            22% {
+                color: var(--light-text);
+            }
+            33% {
+                color: var(--dark-text);
+                -webkit-transform: rotateY(-360deg);
+                transform: rotateY(-360deg);
+            }
+            100% {
+                color: var(--norm-text);
+                -webkit-transform: rotateY(-360deg);
+                transform: rotateY(-360deg);
+            }
+        }
+        /****************************/
+        /* END of HEADER Effects */
+        
+        nav {
+            /* keep pushed to right edge even if flex-wrapped to new line */
+            margin-left: auto;
+        }
+        
+        nav ul {
+            /* nav buffer from right edge */
+            margin-right: 4vw;
+            /* no bullet point */
+            list-style-type: none;
+            /* use all the space available for flex positioning */
+            height: 100%;
+            /* position nav at bottom right of header */
+            align-content: flex-end;
+            /* lifts up from absolute bottom */
+            padding-bottom: 5px;
+        }
+        
+        nav li a {
+            font-size: 24px;
+            color: var(--light-text);
+            /* spacing between links */
+            margin: .5vw;
+            /* these two lines style the thick underline */
+            padding: 0 6px;
+            border-bottom: 3px solid;
+        }
+        /* nav effects */
+        
+        nav ul li {
+            /* sets the duration and type of transiton */
+            -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            /* for positioning the underline effect */
+            position: relative;
+        }
+        
+        nav ul li:before {
+            /*  this will produce a growing underline effect on :hover */
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 88%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 10px;
+            border-radius: 20%;
+            background: var(--norm-text);
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+        
+        nav ul li:hover:before,
+        nav ul li:active:before {
+            /* starts underline animation */
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+        
+        nav ul li:hover,
+        nav ul li:active {
+            /* starts a scale and tilt animation */
+            -webkit-transform: scale(1.06) rotate(.5deg);
+            transform: scale(1.06) rotate(.5deg);
+        }
+        
+        nav ul li:hover:nth-child(even),
+        nav ul li:active:nth-child(even) {
+            /* make every other element tilt counter clockwise */
+            -webkit-transform: scale(1.06) rotate(-.5deg);
+            transform: scale(1.06) rotate(-.5deg);
+        }
+        /* end of nav effects */
+        /*   END OF HEADER AND NAV  */
+        /* Hero Style Start */
+        
+        .hero {
+            display: flex;
+            justify-content: flex-end;
+            /* Image taken from WallpaperFlare.com 
+    (https://www.wallpaperflare.com/two-blue-crystals-blue-and-purple-constellation-poster-plexus-wallpaper-ub) */
+            background-image: url("../images/hero-bg.jpg");
+            /* fixed height of hero */
+            height: 200px;
+            /* fill entire hero container */
+            background-size: cover;
+            /* keep center of image in center of div */
+            background-position: center;
+            position: relative;
+            top: 0;
+            /* needed to position .headshot */
+        }
+        
+        .head-shot {
+            /* absolute positioning to keep out of flex flow */
+            position: absolute;
+            left: 3vw;
+            top: 5px;
+            /* create a circular vignette */
+            border: 5px solid var(--light-text);
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            /* */
+            background-image: url('./../images/head-shot.jpg');
+            /* fill entire container */
+            background-size: cover;
+            /* position top of image at top of div */
+            background-position: top;
+            /* places head-shot behind section and .hero-text */
+            z-index: 10;
+            /* add a shadow */
+            box-shadow: 0 4px 8px 3px var(--dark-text);
+        }
+        
+        .hero:hover {
+            /* effect time */
+            background-blend-mode: hard-light;
+            animation: hue-rotate 10s linear infinite;
+        }
+        
+        .hero:hover .head-shot,
+        .hero:hover .hero-text {
+            /* must run the effect in reverse to cancel it out for these elements*/
+            background-blend-mode: hard-light;
+            animation: hue-rotate 10s linear infinite reverse;
+        }
+        
+        .head-shot:active {
+            /* load up a radial gradient and a url image */
+            background-image: radial-gradient(circle, rgb(185 171 182) 0%, rgb(239 0 0) 100%), url(./../images/head-shot-drawn.png);
+            /* fill entire container */
+            background-size: 100%;
+            /* now animate a color shift and overide css specificity on the :hover rule */
+            animation: hue-rotate 9s linear infinite !important;
+        }
+        /****************************/
+        /* ANIMATION FRAMES         */
+        
+        @keyframes hue-rotate {
+            0% {
+                -webkit-filter: hue-rotate(0);
+                -moz-filter: hue-rotate(0);
+                -ms-filter: hue-rotate(0);
+                filter: hue-rotate(0)
+            }
+            to {
+                -webkit-filter: hue-rotate(1turn);
+                -moz-filter: hue-rotate(1turn);
+                -ms-filter: hue-rotate(1turn);
+                filter: hue-rotate(1turn)
+            }
+        }
+        /*******************************/
+        
+        .hero-text {
+            background-color: var(--light-text);
+            color: var(--dark-text);
+            font-size: 36px;
+            /* extends background-color a little */
+            padding: 5px 6px;
+            /* send to bottom right of hero */
+            align-self: flex-end;
+            /* 6vw from right edge, 12 pixles from bottom of hero image*/
+            margin: 0 6vw 12px 0;
+            /* places over head-shot */
+            z-index: 15;
+            position: relative;
+        }
+        /* ROCKIN TEXT EFFECT */
+        
+        .rockin-effect {
+            /* for animating some text and an image */
+            display: inline-block;
+            animation: 3.8s infinite;
+            animation-timing-function: ease-out;
+        }
+        /* DELAYS for different parts of animation */
+        
+        .hero-text:hover .rockin-effect.two {
+            -webkit-animation-delay: .17s;
+            animation-delay: .17s;
+        }
+        
+        .hero-text:hover .rockin-effect.three {
+            -webkit-animation-delay: .38s;
+            animation-delay: .38s;
+        }
+        
+        .hero-text:hover .rockin-effect.four {
+            -webkit-animation-delay: .62s;
+            animation-delay: .62s;
+        }
+        /* END of DELAYS */
+        
+        #rock-on {
+            /* set up a hidden rock fist! to be animated */
+            opacity: 0;
+            animation: 3.8s infinite;
+            animation-timing-function: ease-out;
+            position: absolute;
+            top: -0.8em;
+            left: 1.9em;
+            display: inline-block;
+            background-image: url("./../images/rock-emoji.png");
+            background-position: center;
+            background-size: 3em 2.5em;
+            width: 3em;
+            height: 2.5em;
+        }
+        
+        .hero-text:hover #rock-on {
+            /* on hover start the fist animation */
+            animation-name: rockin-fist-ani;
+        }
+        
+        .hero-text:hover .rockin-effect {
+            /* start the text animation */
+            animation-name: rockin-ani;
+        }
+        /****************************/
+        /* ANIMATION FRAMES         */
+        
+        @keyframes rockin-fist-ani {
+            from {
+                transform: rotate(-10deg) scale(.1);
+            }
+            12% {
+                opacity: .1;
+            }
+            28% {
+                opacity: .95;
+                transform: rotate(36deg) scale(1.4);
+            }
+            30% {
+                opacity: .2;
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                opacity: 0;
+            }
+            to {
+                transform: rotate(0deg) scale(1);
+            }
+        }
+        
+        @keyframes rockin-ani {
+            0% {
+                color: rgb(64, 120, 211);
+                -webkit-transform: scale(1.3);
+                transform: scale(1.3);
+                text-shadow: 0 6px 4px rgba(0, 0, 0, 1);
+            }
+            22% {
+                color: rgb(34, 60, 151);
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+            33% {
+                color: var(--dark-text);
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+                text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
+            100% {
+                color: var(--norm-text);
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        /****************************/
+        /* END of ROCKIN' EFFECT */
+        /* Hero Style End */
+        /* */
+        /* Section Styling */
+        
+        main,
+        main section {
+            display: flex;
+            justify-content: center;
+        }
+        
+        main {
+            flex-direction: column;
+            /* keeps content off bottom edge of screen */
+            margin-bottom: 2vw;
+        }
+        
+        main section {
+            flex-wrap: nowrap;
+        }
+        
+        .section-title,
+        .section-content {
+            /* Color of text and borders in the main section */
+            color: var(--norm-text);
+            /* vertical spacing between sections */
+            margin-top: 25px;
+            /* places over top of head shot if needed*/
+            z-index: 20;
+        }
+        
+        .section-title {
+            text-align: right;
+            /* do not grow, shrink 2x? ideally 24% */
+            flex: 0 2 24%;
+            /* dont shrink too small and break title */
+            min-width: 200px;
+            /* dont get too big either */
+            max-width: 300px;
+            /* small gap before side border */
+            padding-right: 1vw;
+            /* side border */
+            border-right: 4px solid;
+            /* next two lines set up shadows on text and border */
+            text-shadow: 2px 3px 6px rgba(43, 46, 53, .55);
+            box-shadow: 8px 0 6px -7px var(--norm-text);
+            /* these next two lines add a nice thin outline on titles */
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgba(126, 126, 126, .8);
+        }
+        
+        .section-title h2 {
+            font-size: 55px;
+            /* cool effect to keep the section titles  
+     in view when vewing in landscape on phone */
+            position: -webkit-sticky;
+            position: sticky;
+            /* keeps 25px from top of screen but constrained in div */
+            top: 25px;
+            /* keep the title from hitting absolute bottom */
+            padding-bottom: 25px;
+        }
+        
+        .section-content {
+            /*  do not grow or shrink and idealy be 75% */
+            flex: 0 0 75%;
+            /* padding on left and right of content */
+            padding: 0 2vw;
+            /* make this text as thin as possible */
+            font-weight: 100;
+        }
+        /* END OF SECTION Styling */
+        /* WORK / PROJECTS Section */
+        
+        #work-section {
+            display: flex;
+            /* wrap project cards to new lines */
+            flex-wrap: wrap;
+            /* keeps project card against edges of container */
+            justify-content: space-between;
+        }
+        
+        .project-wrapper {
+            /* needed to position git-links */
+            position: relative;
+            top: 0;
+            /* height of project card */
+            height: 200px;
+            /* sets gaps between projects space-between takes care of the rest */
+            margin: 7px 0;
+            /* enough room for 2 side by side with room for a little gap*/
+            width: 49%;
+        }
+        
+        .project {
+            /* lets project cards share a line */
+            display: inline-flex;
+            /* set up project card as column */
+            flex-direction: column;
+            /* position name tag at bottom of column */
+            justify-content: flex-end;
+            /* take up all the wrapper */
+            width: 100%;
+            height: 100%;
+            /* a nice light blue border */
+            border: 5px solid var(--light-text);
+            /* set background-image to cover entire div */
+            background-size: cover;
+            /* center of image on center of div */
+            background-position: center;
+            position: relative;
+            /* need this position for the :hover effect */
+            top: 0;
+            box-shadow: 6px 6px 6px -2px var(--dark-text);
+        }
+        
+        .project .name-tag {
+            color: var(--dark-text);
+            background-color: var(--light-text);
+            /* set the width to just what the content requires
+        now also on firefox */
+            width: -moz-fit-content;
+            width: fit-content;
+            /* extend colored background */
+            padding: 1vw;
+            /* keeps the name-tag up from the bottom border */
+            margin-bottom: 1.7vw;
+            /* keep the name tag in front of the overlay */
+            z-index: 2;
+        }
+        
+        .project .name-tag h3 {
+            font-size: 26px;
+            /* scaled seperation of the 2 elements in name-tag */
+            padding-bottom: .7vw;
+        }
+        
+        .project .name-tag p {
+            /* imported thin google font */
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+        }
+        
+        .project~.git-link {
+            /*  place on top of everyting else in project card*/
+            z-index: 3;
+            /* positions in bottom right corner of the project card */
+            position: absolute;
+            bottom: 11px;
+            right: 6px;
+            /* initially invisible untill :hover */
+            opacity: 0;
+        }
+        
+        .git-link a {
+            /*  what the link text looks like */
+            background-color: var(--dark-text);
+            color: var(--norm-text);
+            font-size: 20px;
+            padding: 4px;
+            transition: all .75s ease;
+            /* lets add some graphics */
+            background-image: url('./../images/GitHub-Mark-Light-64px.png');
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: contain;
+        }
+        
+        .git-link,
+        .project:hover~.git-link a,
+        .git-link:hover a {
+            /* theses elements will have same transition properties  */
+            transition: all .75s ease;
+        }
+        
+        .project:hover~.git-link,
+        .git-link:hover {
+            /* when project card is :hover make visible */
+            opacity: 1;
+            /*  position up from pre :hover state  */
+            bottom: 20px;
+        }
+        
+        .project:hover~.git-link a,
+        .git-link:hover a {
+            /* on grow the link box */
+            padding: 16px 4px 16px 4px;
+        }
+        
+        .git-link:hover a {
+            /* on git-link:hover change text color */
+            color: var(--light-text);
+        }
+        
+        #work-section .project-wrapper:first-child {
+            /* make first project more prominent */
+            /* takes a column all to itself */
+            width: 100%;
+            /* double the height of other projects */
+            height: 400px;
+        }
+        
+        #work-section .project-wrapper:last-child:nth-child(2n) {
+            /* make last project, if it is an even numbered child, the full width */
+            /* take a column all to itself */
+            width: 100%;
+        }
+        /* VFX .project :hover effect */
+        
+        .overlay-effect {
+            /* positioned overtop of its parent .project */
+            position: absolute;
+            top: 0;
+            height: 100%;
+            /* use all available space */
+            width: 100%;
+            /* obscure project image with this color */
+            background-color: var(--norm-text);
+            /* make the overlay mostly transparent */
+            opacity: .35;
+            /* ease in value changes over 3/4 of a second */
+            transition: .75s ease;
+            /* when dropping out of :hover delay style transition */
+            transition-delay: .15s;
+        }
+        
+        .project:hover .overlay-effect {
+            /* no delay to style transition entering :hover state */
+            transition-delay: 0s;
+            /* fade out the overlay while changing its color to yellow */
+            opacity: 0;
+            background-color: yellow;
+        }
+        /* END OF .project :HOVER EFFECT */
+        /*  Project Backgrounds are now loaded from an external stylesheet project-images */
+        /* END of WORK / PROJECTS */
+        /* CONTACT ME Styling */
+        
+        .contact-links ul {
+            display: flex;
+            flex-wrap: wrap;
+            /* nice padding around everything */
+            justify-content: space-around;
+            /* centered vertically */
+            align-content: space-around;
+            /* no bullet points */
+            list-style-type: none;
+            /* use all the space so we can be centered vertically */
+            height: 100%;
+        }
+        
+        .contact-links li a {
+            font-size: 22px;
+            color: var(--dark-text);
+            /* these 2 lines create the underline look */
+            padding: 0 6px;
+            border-bottom: 4px solid var(--norm-text);
+            /* next three lines set default state of hover effect */
+            transition: .3s;
+            position: relative;
+            top: 0;
+        }
+        
+        .contact-links li a:hover {
+            /* raises text up 2px and drops a nice shadow */
+            top: -2px;
+            padding-bottom: 2px;
+            box-shadow: 0 12px 5px -5px rgba(43, 46, 53, .8);
+        }
+        /* END OF CONTACT ME Styling */
+        /* MESSING AROUND  */
+        
+        .contact-links li:nth-child(2) {
+            /* put the 2nd child in contact links "Cave Wall" last in list 
+    /* default order value is 0 */
+            order: 1;
+        }
+        /* END OF MESSING AROUND */
+        
+        @media (prefers-color-scheme: dark) {
+            /* MEDIA QUERY FOR DARK MODE */
+            /* a reimagining of the layout in a nice darker format */
+             :root {
+                /* new colors for a slightly darker theme
+                 /* added a new hightlight color: med-light-text */
+                --med-light-text: rgb(27, 167, 155);
+                --dark-text: rgb(33, 33, 33);
+                --light-text: rgb(20, 255, 236);
+                --norm-text: rgb(13, 115, 119);
+            }
+            header h1,
+            .hero-text,
+            .project .name-tag {
+                background-color: var(--norm-text);
+            }
+            nav li a {
+                color: var(--norm-text);
+            }
+            nav li a:hover,
+            nav li a:active {
+                border-color: var(--light-text);
+            }
+            .head-shot,
+            .project {
+                border: 5px solid var(--norm-text);
+            }
+            header h1:hover,
+            header h1:active,
+            .hero-text:hover,
+            .hero-text:active,
+            .project:hover .name-tag {
+                background-color: var(--med-light-text);
+            }
+            .project:hover {
+                border: 5px solid var(--med-light-text);
+            }
+            .section-title {
+                /* these next two lines add a nice thin outline on titles */
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: var(--dark-text);
+            }
+            main {
+                /* get rid of light mode bottom margin */
+                margin-bottom: 0;
+            }
+            main section {
+                /* more padding between sections that scales with screeen width */
+                padding-top: 4vw;
+                padding-bottom: 4vw;
+                /* add some shadow between sections */
+                box-shadow: 0 8px 6px -6px var(--dark-text);
+                /* will need to z-index each section lower then the one on top for shadows */
+            }
+            main section:first-child {
+                /*  z-index: -1;
+                /*  new background for about me section */
+                background-color: rgba(0, 0, 0, .8);
+                background: radial-gradient(circle, rgba(65, 53, 36, 1) 0%, rgba(0, 0, 0, 1) 100%);
+                /*
+                /* new text position */
+                text-align: right;
+            }
+            .about-info .wrapper {
+                /*  new margins on the about me text */
+                margin: 0 5%;
+            }
+            main section:nth-child(2) {
+                /* z-index: -2; */
+                /*  new background for about work section */
+                background: rgba(15, 14, 12, .8);
+                background: linear-gradient(200deg, rgba(15, 14, 12, 1) 0%, rgba(92, 88, 84, 1) 100%);
+            }
+            main section:nth-child(3) {
+                /*z-index: -3;
+                /*  new background for contact me section */
+                background: rgba(36, 26, 24, .8);
+                background: radial-gradient(circle, rgb(110, 102, 71) 0%, rgb(59, 53, 47) 100%);
+            }
+            .contact-links li a:hover,
+            .contact-links li a:active {
+                border-color: var(--med-light-text);
+            }
+            @media screen and (min-width: 1024px) {
+                .head-shot {
+                    /* when screen is wide enough start scaling head-shot with section padding*/
+                    width: calc(225px + 4vw) !important;
+                    height: calc(225px + 4vw) !important;
+                }
+            }
+        }
+        /******* END OF DARK MODE ******/
+        
+        @media (hover:none) {
+            /* on a mobile screen make the .git-link always there */
+            .project~.git-link {
+                bottom: 20px;
+                opacity: 1;
+            }
+            .git-link a {
+                padding: 16px 4px 16px 4px;
+            }
+        }
+        /* ****** END of MOBILE *****/
+        /* MEDIA QUERY FOR LARGE SCREENS */
+        
+        @media screen and (min-width: 1200px) {
+            /* this will be applied on any screen larger than 1300px */
+            /* some elements are too small when this wide */
+            .section-content {
+                font-size: 18px;
+            }
+            .project-wrapper {
+                height: 300px;
+            }
+            #work-section .project-wrapper:first-child {
+                /* make first project more prominent */
+                /* double the height of other projects */
+                height: 600px;
+            }
+        }
+        
+        @media screen and (min-width: 1500px) {
+            /* this will be applied on any screen larger than 1500px */
+            /* text in section content is too small when this wide */
+            .section-content {
+                font-size: 21px;
+            }
+        }
+        
+        @media screen and (min-width: 2000px) {
+            /* this will be applied on any screen larger than 2000px */
+            /* some vw based element scaling starts to break design when we hit this size */
+            .section-content {
+                font-size: 42px;
+            }
+            .project .name-tag {
+                /* extend colored background */
+                padding: 22px;
+                /* keeps the name-tag up from the bottom border */
+                margin-bottom: 34px;
+            }
+            .project .name-tag h3 {
+                /*  lock in seperation of the 2 elements in name-tag */
+                padding-bottom: 13px;
+            }
+        }
+        /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+        
+        @media screen and (max-width: 980px) {
+            /* this will be applied on any screen smaller than 980px */
+            /* scale down fonts sizes and make section titles slightly smaller */
+            nav li a {
+                font-size: 22px;
+            }
+            .head-shot {
+                width: 225px;
+                /* shrink the head-shot */
+                height: 225px;
+            }
+            .section-title {
+                /* down from 200px */
+                min-width: 170px;
+            }
+            .section-title h2 {
+                font-size: 45px;
+            }
+            .project .name-tag h3 {
+                font-size: 24px;
+            }
+            .project .name-tag p {
+                font-size: 15px;
+            }
+            .contact-links li a {
+                font-size: 18px;
+            }
+        }
+        /* MEDIA QUERY FOR TABLETS AND SMALLER */
+        
+        @media screen and (max-width: 768px) {
+            /* this will be applied on any screen between 768px and 575px */
+            /* keep shrinking down the fonts */
+            header h1 {
+                font-size: 40px;
+            }
+            nav ul {
+                /* nav buffer from right edge a littel smaller */
+                margin-right: 2vw;
+            }
+            nav li a {
+                font-size: 18px;
+            }
+            .head-shot {
+                width: 215px;
+                /* shrink the head-shot */
+                height: 215px;
+            }
+            .section-title {
+                /* section titles even smaller */
+                min-width: 130px;
+            }
+            .section-title,
+            .section-content {
+                /* shrink spacing between sections */
+                margin-top: 15px;
+            }
+            .section-title h2 {
+                font-size: 38px;
+                /* drop spacing from row layout */
+                padding-bottom: 0;
+            }
+            .section-content {
+                /* thicken up the font for small screens */
+                font-weight: 300;
+            }
+            #work-section {
+                /* switch to a column layout for projects*/
+                flex-direction: column;
+            }
+            .project-wrapper {
+                /* all projects should take up 100% of column */
+                width: 100%;
+                /* tighten up top margin to bring projects closer together */
+                margin-top: 3px;
+            }
+            .project .name-tag h3 {
+                font-size: 20px;
+            }
+            .project .name-tag p {
+                font-size: 14px;
+            }
+            .contact-links li a {
+                font-size: 16px;
+            }
+        }
+        /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+        
+        @media screen and (max-width: 620px) {
+            /* this will be applied on any screen smaller than 620px */
+            nav ul {
+                /* padding for when sitting under h1 */
+                padding-top: 2vw;
+            }
+            main section {
+                /* switch to column layout in sections */
+                flex-direction: column;
+            }
+            .section-title,
+            .section-content {
+                /* shrink spacing between sections */
+                margin-top: 8px;
+            }
+            /* style the title slightly different for column */
+            .section-title {
+                /* right border disappears */
+                border-right: 0;
+                /* border moves to bottom */
+                border-bottom: 4px solid;
+                /* next two lines give an asymmetric underline */
+                margin-left: 80px;
+                padding-right: 36px;
+                /* change box shadow for new column layout */
+                box-shadow: 0 8px 6px -6px var(--dark-text);
+            }
+            .section-title h2 {
+                font-size: 32px;
+            }
+            .section-title br {
+                /* remove line breaks in titles */
+                display: none;
+            }
+            #work-section .project-wrapper:first-child {
+                /* stay larger then other projects for as long as possible */
+                height: 65vw;
+                /* dont get smaller then any other project */
+                min-height: 200px;
+            }
+            /* improve link spacing on small screens */
+            .contact-links li {
+                margin: 9px 6px;
+            }
+        }
+        
+        @media screen and (max-width: 450px) {
+            /* this will be applied on any screen smaller than 450px */
+            .head-shot {
+                /* shrink headshot and position up on screen */
+                top: -5px;
+                width: 215px;
+                height: 215px;
+            }
+            .hero-text {
+                font-size: 22px;
+            }
+            .git-link a {
+                font-size: 16px;
+            }
+        }
+        
+        @media screen and (max-width: 345px) {
+            /* this will be applied on screens smaller then 345px */
+            header nav ul {
+                justify-content: space-around;
+            }
+            .git-link a {
+                font-size: 12px;
+            }
+        }

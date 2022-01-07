@@ -12,7 +12,20 @@ function Nav(props) {
 
   return (
     <nav>
-      I am Nav Component
+      <ul>
+        <li>
+          <a href="#about-me">About Me</a>
+        </li>
+        <li>
+          <a href="#my-work">Work</a>
+        </li>
+        <li>
+          <a href="#contact-me">Contact Me</a>
+        </li>
+        <li>
+          <a href="srt-resume.html">Resume</a>
+        </li>
+      </ul>
     </nav>
   );
 }
