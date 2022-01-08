@@ -7,7 +7,7 @@ function Footer(props) {
       <div className="contact-links">
         <ul>
           <li>
-            <a href="tel:+1-226-886-012">226.886.0102</a>
+            <a href="tel:+1-226-886-012">Phone</a>
           </li>
           <li>
             <a href="mailto:dquinn8@cogeco.ca" target="_blank">Email</a>

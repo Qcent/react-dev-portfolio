@@ -17,10 +17,10 @@ function Nav(props) {
           <a href="#about-me">About Me</a>
         </li>
         <li>
-          <a href="#my-work">Work</a>
+          <a href="#my-work">Portfolio</a>
         </li>
         <li>
-          <a href="#contact-me">Contact Me</a>
+          <a href="#contact-me">Contact</a>
         </li>
         <li>
           <a href="srt-resume.html">Resume</a>

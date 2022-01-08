@@ -64,6 +64,7 @@
             background-color: var(--dark-text);
             /* padded out vertically from h1 */
             padding: 5px 0;
+            flex: 0 0;
         }
         
         header h1 {
@@ -274,7 +275,7 @@
     (https://www.wallpaperflare.com/two-blue-crystals-blue-and-purple-constellation-poster-plexus-wallpaper-ub) */
             background-image: url("../images/hero-bg.jpg");
             /* fixed height of hero */
-            height: 200px;
+            min-height: 200px;
             /* fill entire hero container */
             background-size: cover;
             /* keep center of image in center of div */
@@ -474,6 +475,7 @@
         }
         
         main {
+            flex: 1;
             flex-direction: column;
             /* keeps content off bottom edge of screen */
             margin-bottom: 2vw;
@@ -734,7 +736,7 @@
         /* END OF CONTACT ME Styling */
         /* MESSING AROUND  */
         footer{
-            height: 3.2rem;
+            height: 2.8rem;
             padding-top: .6rem;
         }
         .contact-links li:nth-child(2) {
@@ -789,16 +791,11 @@
             main {
                 /* get rid of light mode bottom margin */
                 margin-bottom: 0;
-            }
-            main section {
+           
                 /* more padding between sections that scales with screeen width */
                 padding-top: 4vw;
                 padding-bottom: 4vw;
-                /* add some shadow between sections */
-                box-shadow: 0 8px 6px -6px var(--dark-text);
-                /* will need to z-index each section lower then the one on top for shadows */
-            }
-            main section:first-child {
+            
                 /*  z-index: -1;
                 /*  new background for about me section */
                 background-color: rgba(0, 0, 0, .8);
@@ -810,12 +807,6 @@
             .about-info .wrapper {
                 /*  new margins on the about me text */
                 margin: 0 5%;
-            }
-            main {
-                /* z-index: -2; */
-                /*  new background for about work section */
-                background: rgba(15, 14, 12, .8);
-                background: linear-gradient(200deg, rgba(15, 14, 12, 1) 0%, rgba(92, 88, 84, 1) 100%);
             }
             footer {
                 /*z-index: -3;
