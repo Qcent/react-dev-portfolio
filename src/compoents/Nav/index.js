@@ -2,29 +2,25 @@ import React from 'react';
 
 function Nav(props) {
   const {
-    categories = [],
-    setCurrentCategory,
-    currentCategory,
-    contactSelected,
-    setContactSelected
+    areas = [],
+    setCurrentArea,
+    currentArea
   } = props;
 
 
   return (
     <nav>
       <ul>
-        <li>
-          <a href="#about-me">About Me</a>
-        </li>
-        <li>
-          <a href="#my-work">Portfolio</a>
-        </li>
-        <li>
-          <a href="#contact-me">Contact</a>
-        </li>
-        <li>
-          <a href="srt-resume.html">Resume</a>
-        </li>
+        {areas.map((area) => (
+          <li
+            className={` ${currentArea.name === area.name && 'navActive'}`}
+            key={area.name}
+          >
+            <a onClick={() => { setCurrentArea(area); }} >
+              {area.name}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );

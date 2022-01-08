@@ -244,6 +244,7 @@
             transition-timing-function: ease-out;
         }
         
+        /* .navActive::before, */
         nav ul li:hover:before,
         nav ul li:active:before {
             /* starts underline animation */
@@ -251,6 +252,7 @@
             transform: scaleX(1);
         }
         
+        /* .navActive, */
         nav ul li:hover,
         nav ul li:active {
             /* starts a scale and tilt animation */
@@ -258,6 +260,7 @@
             transform: scale(1.06) rotate(.5deg);
         }
         
+        .navActive:nth-child(even),
         nav ul li:hover:nth-child(even),
         nav ul li:active:nth-child(even) {
             /* make every other element tilt counter clockwise */
@@ -700,7 +703,11 @@
         /* END OF .project :HOVER EFFECT */
         /*  Project Backgrounds are now loaded from an external stylesheet project-images */
         /* END of WORK / PROJECTS */
-        /* CONTACT ME Styling */
+        /* FOOTER CONTACT Styling */
+        footer{
+            height: 2.8rem;
+            padding-top: .6rem;
+        }
         
         .contact-links ul {
             display: flex;
@@ -733,20 +740,17 @@
             padding-bottom: 2px;
             box-shadow: 0 12px 5px -5px rgba(43, 46, 53, .8);
         }
-        /* END OF CONTACT ME Styling */
+        /* END OF FOOTER Styling */
         /* MESSING AROUND  */
-        footer{
-            height: 2.8rem;
-            padding-top: .6rem;
-        }
+
         .contact-links li:nth-child(2) {
-            /* put the 2nd child in contact links "Cave Wall" last in list 
+            /* put the 2nd child of .contact-links in footer "Email" last in list 
     /* default order value is 0 */
             order: 1;
         }
         /* END OF MESSING AROUND */
         
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: lbdark) {
             /* MEDIA QUERY FOR DARK MODE */
             /* a reimagining of the layout in a nice darker format */
              :root {
@@ -765,6 +769,10 @@
             nav li a {
                 color: var(--norm-text);
             }
+            .navActive a{
+                color:rgb(226, 127, 34);
+            }
+            .navActive a,
             nav li a:hover,
             nav li a:active {
                 border-color: var(--light-text);
