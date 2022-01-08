@@ -243,6 +243,9 @@
             -webkit-transition-timing-function: ease-out;
             transition-timing-function: ease-out;
         }
+        .navActive a{
+            color:rgb(34, 181, 226);
+        }
         
         /* .navActive::before, */
         nav ul li:hover:before,

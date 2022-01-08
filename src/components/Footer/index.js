@@ -10,13 +10,13 @@ function Footer(props) {
             <a href="tel:+1-226-886-012">Phone</a>
           </li>
           <li>
-            <a href="mailto:dquinn8@cogeco.ca" target="_blank">Email</a>
+            <a href="mailto:dquinn8@cogeco.ca" >Email</a>
           </li>
           <li>
-            <a href="https://github.com/Qcent" target="_blank">GitHub</a>
+            <a href="https://github.com/Qcent" rel="noreferrer" target="_blank">GitHub</a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/dave-quinn-526356218/" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/dave-quinn-526356218/" rel="noreferrer" target="_blank">LinkedIn</a>
           </li>
         </ul>
       </div>
