@@ -4,7 +4,7 @@ function AboutMe() {
   return (
     <section id='AboutMe'>
       <div className='section-title'>
-        <h2>A<span class="spinner-effect">b</span>out <span class="spinner-effect spin-3d delay">Me</span></h2>
+        <h2>A<span className="spinner-effect">b</span>out <span className="spinner-effect spin-3d delay">Me</span></h2>
       </div>
       <div className='section-content'>
         <p>
@@ -12,7 +12,7 @@ function AboutMe() {
           Enthusiastic about evolving web applications, databases, and creating engaging user experiences.
           I enjoy programming challenges and developing algorithms that tackle complex problems.
           I have been coding as a self-taught hobbyist for many years.
-          Creating web pages, games and applications is my <span class="love">passion</span>,
+          Creating web pages, games and applications is my <span className="love">passion</span>,
           and I am excited to take my skills to the professional level.
         </p>
         <p>

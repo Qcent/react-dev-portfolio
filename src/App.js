@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import ConstructionCard from './components/ConstructionCard';
 import AboutMe from './components/AboutMe';
 import Resume from './components/Resume';
+import ContactForm from './components/ContactForm';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
         },
         {
             name: 'Contact', description: 'Give the users a form to send me a message',
-            component: <ConstructionCard name={'Contact'} />
+            component: <ContactForm />
         },
         {
             name: 'Resume', description: "If you download my resume i'll list you my proficeiencies",

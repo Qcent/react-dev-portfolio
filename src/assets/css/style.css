@@ -516,7 +516,7 @@
             /* dont shrink too small and break title */
             min-width: 200px;
             /* dont get too big either */
-            max-width: 300px;
+            max-width: 350px;
             /* small gap before side border */
             padding-right: 1vw;
        
@@ -569,6 +569,81 @@
             margin-left:2rem;
         }
         /* END OF RESUME Section */
+
+           /* CONTACT FORM Section */
+           .formfield * {
+            vertical-align: top;
+          }
+           #contact-form label{
+              display: inline-block;
+              width: 8.5rem;
+              text-align: right;
+              margin-right: .2rem;
+           }
+           #contact-form input{
+            padding-left: .1rem;
+           }
+           #contact-form textarea{
+               resize: none;
+               width: calc(100% - 8.7rem);
+               padding: .1rem;
+           }
+           #contact-form button {
+            float: right;
+            margin-right: 5rem;
+            margin-top: 0.3rem;
+            color: var(--norm-text);
+
+           
+                background: var(--background-col); 
+                position: relative;
+                border: solid var(--dark-text);            
+                border-width: 2px 2px 2px 3px;
+                border-radius:7% 92% 4% 93%/96% 9% 92% 11%;
+                padding: .5rem 2.2rem; 
+                overflow: hidden;
+                
+              }
+            #contact-form button:hover{
+                transition: all 3s ease;
+                cursor: pointer;
+                background: linear-gradient(184deg, var(--background-col) 0%, var(--background-col) 46%,rgba(71, 70, 68, 0.8) 100%);
+            }
+          
+              /*button:before (attr data-hover)*/
+              #contact-form button:hover:before{opacity: 1; transform: translate(0,0);}
+              #contact-form button:before{
+                content: attr(data-hover);
+                position: absolute;
+                top: .5rem; left: 0; 
+                width: 100%;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                font-weight: 800;
+                font-size: .8rem;
+                opacity: 0;
+                transform: translate(-100%,0);
+                transition: all .3s ease-in-out;
+              }
+                /*button div (button text before hover)*/
+                #contact-form button:hover div{opacity: 0; transform: translate(100%,0)}
+                #contact-form button div{
+                  text-transform: uppercase;
+                  letter-spacing: 3px;
+                  font-weight: 800;
+                  font-size: .8rem;
+                  transition: all .3s ease-in-out;
+                }
+
+            #contact-form button:disabled::before{
+                content: 'Thank You!';
+            }
+            #contact-form .error-text{
+                width:100%;
+                text-align: center;
+            }
+
+        /* END OF CONTACT FORM Section */
 
         /* WORK / PROJECTS Section */
         
@@ -836,13 +911,13 @@
                 padding-top: 4vw; */
                 padding-bottom: 4vw;
                
-            
                 /*  z-index: -1;
                 /*  background for section */
                 background-color: rgba(0, 0, 0, .8);
                 background: radial-gradient(circle, rgba(65, 53, 36, 1) 0%, rgba(0, 0, 0, 1) 100%);
-                
-        
+            }
+            #contact-form button {
+                border: solid var(--norm-text);    
             }
             .about-info .wrapper {
                 /*  new margins on the about me text */
@@ -1085,6 +1160,19 @@
             }
             header nav ul {
                 justify-content: space-around;
+            }
+            #contact-form label{
+                text-align: left;
+            }
+            #contact-form input,
+            #contact-form textarea{
+                margin-left: 0;
+                width: 100%;
+            }
+            #contact-form button {
+                float:none;
+                margin-left:28%;
+                margin-right: 0;
             }
             .git-link a {
                 font-size: .8rem;

@@ -4,7 +4,7 @@ function Resume() {
   return (
     <section id='Resume'>
       <div className='section-title'>
-        <h2>Re<span class="spinner-effect">s</span>u<span class="spinner-effect spin-3d delay">m</span>e</h2>
+        <h2><span className="spinner-effect">R</span>esu<span className="spinner-effect spin-3d delay">m</span>e</h2>
       </div>
       <div className='section-content'>
         <h3>
