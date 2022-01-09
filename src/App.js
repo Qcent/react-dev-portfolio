@@ -8,7 +8,8 @@ import Footer from './components/Footer';
 
 //Main components
 import ConstructionCard from './components/ConstructionCard';
-import AboutMe from './components/AboutMe'
+import AboutMe from './components/AboutMe';
+import Resume from './components/Resume';
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
         },
         {
             name: 'Resume', description: "If you download my resume i'll list you my proficeiencies",
-            component: <ConstructionCard name={'Resume'} />
+            component: <Resume />
         },
     ]);
 

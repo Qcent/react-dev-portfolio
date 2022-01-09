@@ -80,7 +80,7 @@
             padding-left: 1rem;
             /* using screen width scaling for fun */
             padding-right: 1.7vw;
-            font-size: 50px;
+            font-size: 3.1rem;
         }
         /* Visual Effect for Header */
         
@@ -208,7 +208,7 @@
         }
         
         nav li a {
-            font-size: 24px;
+            font-size: 1.5rem;
             color: var(--light-text);
             /* spacing between links */
             margin: .5vw;
@@ -364,7 +364,7 @@
             background-color: var(--light-text);
             border-radius: .7rem;
             color: var(--dark-text);
-            font-size: 36px;
+            font-size: 2.1rem;
             /* extends background-color a little */
             padding: 5px 6px;
             /* send to bottom right of hero */
@@ -532,7 +532,7 @@
         }
         
         .section-title h2 {
-            font-size: 55px;
+            font-size: 3.4rem;
         }
         
         .section-content {
@@ -556,10 +556,20 @@
                 max-width: 800px;
                 width: 70%;
                 margin: 0 auto;
-                font-size: 17px;
-                line-height: 28px;           
+                font-size: 1.1rem;
+                line-height: 1.75rem;           
         }
         /* END OF SECTION Styling */
+
+        /* RESUME Section */
+        ul.proficiencies{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin-left:2rem;
+        }
+        /* END OF RESUME Section */
+
         /* WORK / PROJECTS Section */
         
         #work-section {
@@ -620,7 +630,7 @@
         }
         
         .project .name-tag h3 {
-            font-size: 26px;
+            font-size: 1.6rem;
             /* scaled seperation of the 2 elements in name-tag */
             padding-bottom: .7vw;
         }
@@ -628,7 +638,7 @@
         .project .name-tag p {
             /* imported thin google font */
             font-family: 'Lato', sans-serif;
-            font-size: 16px;
+            font-size: 1rem;
         }
         
         .project~.git-link {
@@ -646,7 +656,7 @@
             /*  what the link text looks like */
             background-color: var(--dark-text);
             color: var(--norm-text);
-            font-size: 20px;
+            font-size: 1.25rem;
             padding: 4px;
             transition: all .75s ease;
             /* lets add some graphics */
@@ -744,7 +754,7 @@
         }
         
         .contact-links li a {
-            font-size: 22px;
+            font-size: 1.5rem;
             color: var(--dark-text);
             /* these 2 lines create the underline look */
             padding: 0 6px;
@@ -875,7 +885,7 @@
             /* this will be applied on any screen larger than 1300px */
             /* some elements are too small when this wide */
             .section-content {
-                font-size: 18px;
+                font-size: 1.1rem;
             }
             .project-wrapper {
                 height: 300px;
@@ -891,7 +901,7 @@
             /* this will be applied on any screen larger than 1500px */
             /* text in section content is too small when this wide */
             .section-content {
-                font-size: 21px;
+                font-size: 1.5rem;
             }
         }
         
@@ -899,7 +909,7 @@
             /* this will be applied on any screen larger than 2000px */
             /* some vw based element scaling starts to break design when we hit this size */
             .section-content {
-                font-size: 42px;
+                font-size: 2.6rem;
             }
             .project .name-tag {
                 /* extend colored background */
@@ -918,7 +928,7 @@
             /* this will be applied on any screen smaller than 980px */
             /* scale down fonts sizes and make section titles slightly smaller */
             nav li a {
-                font-size: 22px;
+                font-size: 1.4rem;
             }
             .head-shot {
                 width: 225px;
@@ -929,17 +939,21 @@
                 /* down from 200px */
                 min-width: 170px;
             }
+            .section-content {
+                /* increase width for smaller screens */
+                width:95%;
+            }
             .section-title h2 {
-                font-size: 45px;
+                font-size: 2.8rem;
             }
             .project .name-tag h3 {
-                font-size: 24px;
+                font-size: 1.5rem;
             }
             .project .name-tag p {
-                font-size: 15px;
+                font-size: 1rem;
             }
             .contact-links li a {
-                font-size: 18px;
+                font-size: 1.2rem;
             }
         }
         /* MEDIA QUERY FOR TABLETS AND SMALLER */
@@ -948,14 +962,14 @@
             /* this will be applied on any screen between 768px and 575px */
             /* keep shrinking down the fonts */
             header h1 {
-                font-size: 40px;
+                font-size: 2.5rem;
             }
             nav ul {
                 /* nav buffer from right edge a littel smaller */
                 margin-right: 2vw;
             }
             nav li a {
-                font-size: 18px;
+                font-size: 1.2rem;
             }
             .head-shot {
                 width: 215px;
@@ -966,13 +980,9 @@
                 /* section titles even smaller */
                 min-width: 130px;
             }
-            .section-title,
-            .section-content {
-                /* shrink spacing between sections */
-                margin-top: 15px;
-            }
+     
             .section-title h2 {
-                font-size: 38px;
+                font-size: 2.4rem;
                 /* drop spacing from row layout */
                 padding-bottom: 0;
             }
@@ -991,42 +1001,31 @@
                 margin-top: 3px;
             }
             .project .name-tag h3 {
-                font-size: 20px;
+                font-size: 1.25rem;
             }
             .project .name-tag p {
-                font-size: 14px;
+                font-size: 1.3rem;
             }
             .contact-links li a {
-                font-size: 16px;
+                font-size: 1rem;
             }
         }
         /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
         
         @media screen and (max-width: 620px) {
             /* this will be applied on any screen smaller than 620px */
+            :root {
+                font-size: 95%;
+            }
             nav ul {
                 /* padding for when sitting under h1 */
                 padding-top: 2vw;
             }
-            .section-title,
-            .section-content {
-                /* shrink spacing between sections */
-                margin-top: 8px;
-            }
-            /* style the title slightly different for column */
-            .section-title {
-                /* right border disappears */
-                border-right: 0;
-                /* border moves to bottom */
-                border-bottom: 4px solid;
-                /* next two lines give an asymmetric underline */
-                margin-left: 80px;
-                padding-right: 36px;
-                /* change box shadow for new column layout */
-                box-shadow: 0 8px 6px -6px var(--dark-text);
-            }
+            .section-title{
+                margin: 1.2rem 0 -0.6rem 25vw;
+            }   
             .section-title h2 {
-                font-size: 32px;
+                font-size: 2rem;
             }
             .section-title br {
                 /* remove line breaks in titles */
@@ -1043,9 +1042,21 @@
                 margin: 9px 6px;
             }
         }
+        @media screen and (max-width: 550px) {
+            /* this will be applied on any screen smaller than 450px */
+            :root {
+                font-size: 85%;
+            }
+            .section-content{
+                padding: 2rem 3rem;
+            }
+        }
         
         @media screen and (max-width: 450px) {
             /* this will be applied on any screen smaller than 450px */
+            :root {
+                font-size: 75%;
+            }
             .head-shot {
                 /* shrink headshot and position up on screen */
                 top: -5px;
@@ -1053,19 +1064,29 @@
                 height: 215px;
             }
             .hero-text {
-                font-size: 22px;
+                font-size: 1.5rem;
+            }
+            .section-title{
+                max-width: 78vw;
+                margin: 1.2rem 0 -0.6rem 13vw;
+            }   
+            .section-content{
+                padding: 1.2rem 2rem;
             }
             .git-link a {
-                font-size: 16px;
+                font-size: 1rem;
             }
         }
         
         @media screen and (max-width: 345px) {
             /* this will be applied on screens smaller then 345px */
+            :root {
+                font-size: 68%;
+            }
             header nav ul {
                 justify-content: space-around;
             }
             .git-link a {
-                font-size: 12px;
+                font-size: .8rem;
             }
         }
