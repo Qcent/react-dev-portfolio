@@ -16,7 +16,7 @@ function Nav(props) {
             className={` ${currentArea.name === area.name && 'navActive'}`}
             key={area.name}
           >
-            <a onClick={() => { setCurrentArea(area); }} >
+            <a href={`#${area.name}`} onClick={() => { setCurrentArea(area); }} >
               {area.name}
             </a>
           </li>

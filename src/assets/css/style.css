@@ -22,8 +22,8 @@
         .love:hover::after {
             opacity: .6;
             position: absolute;
-            top: -.2em;
-            right: 0.85em;
+            top: -.2rem;
+            right: 1.2rem;
             content: "❤️";
             transform: scale(2);
         }
@@ -47,6 +47,8 @@
             --dark-text: rgb(43, 46, 53);
             --light-text: rgb(135, 197, 198);
             --norm-text: rgb(60, 78, 107);
+            --content-shadow: rgba(121, 79, 16, 0.6);
+            --content-background-col: rgb(186, 224, 226);
         }
         /* END OF COUSTOM PROPERTIES */
         /* HEADER and Nav Styling */
@@ -63,15 +65,19 @@
         header {
             background-color: var(--dark-text);
             /* padded out vertically from h1 */
-            padding: 5px 0;
+            padding: 5px;
+            padding-right: 0;
             flex: 0 0;
         }
         
         header h1 {
             background-color: var(--light-text);
+            border-radius: .7rem;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
             color: var(--dark-text);
             /* padding extends the blue background on text */
-            padding-left: 4.5vw;
+            padding-left: 1rem;
             /* using screen width scaling for fun */
             padding-right: 1.7vw;
             font-size: 50px;
@@ -244,7 +250,8 @@
             transition-timing-function: ease-out;
         }
         .navActive a{
-            color:rgb(34, 181, 226);
+           color:rgb(225, 228, 203);
+           text-shadow: 0px 0px 2.8rem #ffffe4;  
         }
         
         /* .navActive::before, */
@@ -355,6 +362,7 @@
         
         .hero-text {
             background-color: var(--light-text);
+            border-radius: .7rem;
             color: var(--dark-text);
             font-size: 36px;
             /* extends background-color a little */
@@ -477,12 +485,12 @@
         main,
         main section {
             display: flex;
-            justify-content: center;
+            justify-content: start;
+            flex-direction: column;
         }
         
         main {
             flex: 1;
-            flex-direction: column;
             /* keeps content off bottom edge of screen */
             margin-bottom: 2vw;
         }
@@ -495,51 +503,61 @@
         .section-content {
             /* Color of text and borders in the main section */
             color: var(--norm-text);
-            /* vertical spacing between sections */
-            margin-top: 25px;
             /* places over top of head shot if needed*/
             z-index: 20;
+
+                background-color: var(--content-background-col);
+                box-shadow: 0 10px 18px 0px var(--content-shadow);
+                transition: all 0.13s ease-in;
         }
         
         .section-title {
-            text-align: right;
-            /* do not grow, shrink 2x? ideally 24% */
-            flex: 0 2 24%;
+            text-align: center;
             /* dont shrink too small and break title */
             min-width: 200px;
             /* dont get too big either */
             max-width: 300px;
             /* small gap before side border */
             padding-right: 1vw;
-            /* side border */
-            border-right: 4px solid;
+       
             /* next two lines set up shadows on text and border */
             text-shadow: 2px 3px 6px rgba(43, 46, 53, .55);
-            box-shadow: 8px 0 6px -7px var(--norm-text);
-            /* these next two lines add a nice thin outline on titles */
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: rgba(126, 126, 126, .8);
+            box-shadow: 8px 0 6px -7px var(--content-shadow);
+   
+                margin: 1.2rem 0 -.6rem 14rem;
+                transform: rotate(1deg); 
+                border: solid var(--norm-text);            
+                border-width: 3px 3px 5px 5px;
+                border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
         }
         
         .section-title h2 {
             font-size: 55px;
-            /* cool effect to keep the section titles  
-     in view when vewing in landscape on phone */
-            position: -webkit-sticky;
-            position: sticky;
-            /* keeps 25px from top of screen but constrained in div */
-            top: 25px;
-            /* keep the title from hitting absolute bottom */
-            padding-bottom: 25px;
         }
         
         .section-content {
+            z-index: 19;
             /*  do not grow or shrink and idealy be 75% */
             flex: 0 0 75%;
             /* padding on left and right of content */
             padding: 0 2vw;
             /* make this text as thin as possible */
             font-weight: 100;
+
+                border-top-left-radius: 37px 140px;
+                border-top-right-radius: 23px 130px;
+                border-bottom-left-radius: 110px 19px;
+                border-bottom-right-radius: 120px 24px;
+              
+                display: block;
+                position: relative;
+                border: solid 3px var(--norm-text);
+                padding: 40px 60px;
+                max-width: 800px;
+                width: 70%;
+                margin: 0 auto;
+                font-size: 17px;
+                line-height: 28px;           
         }
         /* END OF SECTION Styling */
         /* WORK / PROJECTS Section */
@@ -708,7 +726,7 @@
         /* END of WORK / PROJECTS */
         /* FOOTER CONTACT Styling */
         footer{
-            height: 2.8rem;
+            min-height: 2.8rem;
             padding-top: .6rem;
         }
         
@@ -753,7 +771,7 @@
         }
         /* END OF MESSING AROUND */
         
-        @media (prefers-color-scheme: lbdark) {
+        @media (prefers-color-scheme: dark) {
             /* MEDIA QUERY FOR DARK MODE */
             /* a reimagining of the layout in a nice darker format */
              :root {
@@ -763,6 +781,7 @@
                 --dark-text: rgb(33, 33, 33);
                 --light-text: rgb(20, 255, 236);
                 --norm-text: rgb(13, 115, 119);
+                --content-background-col: transparent;
             }
             header h1,
             .hero-text,
@@ -773,7 +792,7 @@
                 color: var(--norm-text);
             }
             .navActive a{
-                color:rgb(226, 127, 34);
+                color:rgb(172, 105, 42);
             }
             .navActive a,
             nav li a:hover,
@@ -795,25 +814,25 @@
                 border: 5px solid var(--med-light-text);
             }
             .section-title {
-                /* these next two lines add a nice thin outline on titles */
-                -webkit-text-stroke-width: 1px;
-                -webkit-text-stroke-color: var(--dark-text);
+                background: rgb(43,49,50);
+                background: linear-gradient(189deg, rgba(43,49,50,1) 0%, rgba(51,39,26,1) 60%, rgba(28,23,4,1) 100%);
             }
             main {
                 /* get rid of light mode bottom margin */
                 margin-bottom: 0;
            
                 /* more padding between sections that scales with screeen width */
-                padding-top: 4vw;
+                /*
+                padding-top: 4vw; */
                 padding-bottom: 4vw;
+               
             
                 /*  z-index: -1;
-                /*  new background for about me section */
+                /*  background for section */
                 background-color: rgba(0, 0, 0, .8);
                 background: radial-gradient(circle, rgba(65, 53, 36, 1) 0%, rgba(0, 0, 0, 1) 100%);
-                /*
-                /* new text position */
-                text-align: right;
+                
+        
             }
             .about-info .wrapper {
                 /*  new margins on the about me text */
@@ -988,10 +1007,6 @@
             nav ul {
                 /* padding for when sitting under h1 */
                 padding-top: 2vw;
-            }
-            main section {
-                /* switch to column layout in sections */
-                flex-direction: column;
             }
             .section-title,
             .section-content {

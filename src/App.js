@@ -19,15 +19,15 @@ function App() {
         },
         {
             name: 'Portfolio', description: 'A place to show off my web development work',
-            component: <ConstructionCard />
+            component: <ConstructionCard name={'Portfolio'} />
         },
         {
             name: 'Contact', description: 'Give the users a form to send me a message',
-            component: <ConstructionCard />
+            component: <ConstructionCard name={'Contact'} />
         },
         {
             name: 'Resume', description: "If you download my resume i'll list you my proficeiencies",
-            component: <ConstructionCard />
+            component: <ConstructionCard name={'Resume'} />
         },
     ]);
 

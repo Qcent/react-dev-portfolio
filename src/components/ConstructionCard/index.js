@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from '../../logo.svg';
 
-function ConstructionCard() {
+function ConstructionCard(props) {
   return (
     <div className="App" >
       <section className="App-header" >
-        <p>< code > Section Under Construction </code> </p>
+        <p>< code > {props.name} Section Under Construction </code> </p>
         <img src={logo}
           className="App-logo"
           alt="logo" />

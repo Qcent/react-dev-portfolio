@@ -4,7 +4,6 @@ function Main(props) {
   const { currentArea } = props;
   return (
     <main>
-      {currentArea.description}
       {currentArea.component}
     </main>
   );
