@@ -1,13 +1,28 @@
 module.exports = {
     duration: 500,
     defaultStyle: {
-        transition: `opacity ${this.duration}ms ease-in-out`,
-        opacity: 1,
+        transition: `all ${500}ms ease`,
     },
     transitionStyles: {
-        entering: { opacity: 0.2 },
-        entered: { opacity: 1 },
-        exiting: { opacity: 0.5 },
-        exited: { opacity: 0 },
+        title:
+        {
+            entering: {
+                marginLeft: '100vw',
+                transform: 'rotate3d(2, -1, -1, -0.2turn)'
+            },
+            entered: {},
+            exiting: { opacity: 0.6 },
+            exited: { opacity: 0 },
+        },
+        content: {
+            entering: {
+                opacity: 0,
+                marginRight: '100vw',
+                transform: 'rotate(180deg)'
+            },
+            entered: {},
+            exiting: { opacity: 0.6 },
+            exited: { opacity: 0 },
+        }
     }
 }

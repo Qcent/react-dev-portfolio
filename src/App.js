@@ -13,8 +13,6 @@ import Resume from './components/Resume';
 import ContactForm from './components/ContactForm';
 import Portfolio from './components/Portfolio'
 
-//const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-
 function App() {
     const [areas] = useState([
         {

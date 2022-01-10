@@ -1,12 +1,21 @@
 import React from 'react';
+import AreaAnimations from '../AreaAnimation';
 
-function AboutMe() {
+function AboutMe(props) {
   return (
     <section id='AboutMe'>
-      <div className='section-title'>
+      <div className='section-title'
+        style={{
+          ...AreaAnimations.defaultStyle,
+          ...AreaAnimations.transitionStyles.title[props.state]
+        }}>
         <h2>A<span className="spinner-effect">b</span>out <span className="spinner-effect spin-3d delay">Me</span></h2>
       </div>
-      <div className='section-content'>
+      <div className='section-content'
+        style={{
+          ...AreaAnimations.defaultStyle,
+          ...AreaAnimations.transitionStyles.content[props.state]
+        }}>
         <p>
           Highly versatile Full Stack developer with a flair for front end design.
           Enthusiastic about evolving web applications, databases, and creating engaging user experiences.
