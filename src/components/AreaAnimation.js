@@ -8,7 +8,7 @@ module.exports = {
         {
             entering: {
                 marginLeft: '100vw',
-                transform: 'rotate3d(2, -1, -1, -0.2turn)'
+                transform: 'rotate(-180deg)'
             },
             entered: {},
             exiting: { opacity: 0.6 },
@@ -17,7 +17,7 @@ module.exports = {
         content: {
             entering: {
                 opacity: 0,
-                marginRight: '100vw',
+                marginLeft: '100vw',
                 transform: 'rotate(180deg)'
             },
             entered: {},
