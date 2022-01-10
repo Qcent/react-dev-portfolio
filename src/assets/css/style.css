@@ -647,12 +647,15 @@
 
         /* WORK / PROJECTS Section */
         
-        #work-section {
+        #work-section.section-content {
             display: flex;
             /* wrap project cards to new lines */
             flex-wrap: wrap;
             /* keeps project card against edges of container */
             justify-content: space-between;
+            /* make wider to better display the projects  */
+            width:90%;
+            max-width:90%;
         }
         
         .project-wrapper {
@@ -809,6 +812,7 @@
         /* END OF .project :HOVER EFFECT */
         /*  Project Backgrounds are now loaded from an external stylesheet project-images */
         /* END of WORK / PROJECTS */
+
         /* FOOTER CONTACT Styling */
         footer{
             min-height: 2.8rem;

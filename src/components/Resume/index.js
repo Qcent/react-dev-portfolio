@@ -11,14 +11,12 @@ function Resume() {
           Download my <a href='resume.pdf'>Resume</a> in .pdf format.
         </h3><br />
         <h3>Proficiencies</h3>
-        <p>
-          <ul className='proficiencies'>
-            <li>This</li>
-            <li>That</li>
-            <li>Tech</li>
-            <li>Code</li>
-          </ul>
-        </p>
+        <ul className='proficiencies'>
+          <li>This</li>
+          <li>That</li>
+          <li>Tech</li>
+          <li>Code</li>
+        </ul>
       </div>
     </section>
   );
