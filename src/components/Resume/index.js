@@ -8,7 +8,7 @@ function Resume() {
       </div>
       <div className='section-content'>
         <h3>
-          Download my <a href='resume.pdf'>Resume</a> in .pdf format.
+          Download my <a href='Dave_Quinn-Resume.pdf'>Resume</a> in .pdf format.
         </h3><br />
         <h3>Proficiencies</h3>
         <ul className='proficiencies'>

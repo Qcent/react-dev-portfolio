@@ -16,11 +16,11 @@ function AboutMe() {
           and I am excited to take my skills to the professional level.
         </p>
         <p>
-          I Recently earned a certificate in full stack development from the University of Toronto,
+          I recently earned a certificate in full stack development from the University of Toronto,
           with newly honed skills in Javascript, Node, React, and responsive web design.
           Recently completed 2 collaborative projects where I took a lead role in managing team output
           using an agile workflow. My familiarity with HTML, CSS, JavaScript/jQuery, Node.js, Express.js,
-          MySQL, NoSQL, MongoDB and React make make an excellent addition to any development team.
+          MySQL, NoSQL, MongoDB and React make me an excellent addition to any development team.
         </p>
       </div>
     </section>

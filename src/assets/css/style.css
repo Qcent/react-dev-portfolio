@@ -669,7 +669,7 @@
             /* enough room for 2 side by side with room for a little gap*/
             width: 49%;
         }
-        
+
         .project {
             /* lets project cards share a line */
             display: inline-flex;
@@ -689,10 +689,19 @@
             position: relative;
             /* need this position for the :hover effect */
             top: 0;
-            box-shadow: 6px 6px 6px -2px var(--dark-text);
+            box-shadow: 3px 3px 6px -2px var(--content-shadow);
+        }
+        .project,
+        .overlay-effect{
+            border-width: 3px 3px 5px 5px;
+            border-radius:2% 7% 5% 9%/6% 4% 3% 4%;
         }
         
         .project .name-tag {
+                border-color: red;
+                border-width: 3px 3px 5px 5px;
+                border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+                margin-left:.5rem;
             color: var(--dark-text);
             background-color: var(--light-text);
             /* set the width to just what the content requires
@@ -871,6 +880,7 @@
                 --light-text: rgb(20, 255, 236);
                 --norm-text: rgb(13, 115, 119);
                 --content-background-col: transparent;
+                --dark-select:rgb(172, 105, 42);
             }
             header h1,
             .hero-text,
@@ -881,7 +891,7 @@
                 color: var(--norm-text);
             }
             .navActive a{
-                color:rgb(172, 105, 42);
+                color: var(--dark-select);
             }
             .navActive a,
             nav li a:hover,

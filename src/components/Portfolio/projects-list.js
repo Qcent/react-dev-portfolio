@@ -24,9 +24,10 @@ module.exports = [
     {
         id: "project-poker",
         url: "http://72.39.181.12/testing/poker/holdem.pl",
+        norepo: true,
         repo: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         title: "Texas Hold'Em",
-        tech: "JavaScript/Perl<br>CSS/HTML"
+        tech: "JavaScript/Perl/CSS/HTML"
     },
     {
         id: "project-onepalm",
