@@ -824,8 +824,10 @@
 
         /* FOOTER CONTACT Styling */
         footer{
-            min-height: 2.8rem;
-            padding-top: .6rem;
+            min-height: 3.4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         .contact-links ul {
