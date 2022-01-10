@@ -485,7 +485,7 @@
         main,
         main section {
             display: flex;
-            justify-content: start;
+            justify-content: flex-start;
             flex-direction: column;
         }
         
@@ -498,7 +498,46 @@
         main section {
             flex-wrap: nowrap;
         }
-        
+        /* NEW SECTION ANIMATIONS */
+        .section-title-enter {
+            opacity: 0.01;
+            transform: scale(2.1);
+          }
+          
+          .section-title-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 300ms;
+          }
+          
+          .section-title-exit {
+            opacity: 1;
+            transform: scale(1);
+          }
+          
+          .section-title-exit-active {
+            opacity: 0.01;
+            transform: scale(1.1);
+            transition: all 300ms;
+          }
+
+          .switch-enter {
+            opacity: 0.01;
+        }
+        .switch-enter.switch-enter-active {
+            opacity: 1.0;
+        }
+        .switch-leave {
+            opacity: 1.0;
+        }
+        .switch-leave.switch-leave-active {
+            opacity: 0;
+        }
+
+        /* END OF SECTION ANIMATIONS */
+
+
+
         .section-title,
         .section-content {
             /* Color of text and borders in the main section */
@@ -981,6 +1020,9 @@
         
         @media screen and (min-width: 1200px) {
             /* this will be applied on any screen larger than 1300px */
+            .section-title {
+                margin-left: 25%;
+            }
             /* some elements are too small when this wide */
             .section-content {
                 font-size: 1.1rem;
@@ -997,9 +1039,12 @@
         
         @media screen and (min-width: 1500px) {
             /* this will be applied on any screen larger than 1500px */
-            /* text in section content is too small when this wide */
+  
             .section-content {
+            /* text in section content is too small when this wide */
                 font-size: 1.5rem;
+            /* let this take up more of the screen */
+                max-width: 80%;
             }
         }
         
@@ -1007,7 +1052,7 @@
             /* this will be applied on any screen larger than 2000px */
             /* some vw based element scaling starts to break design when we hit this size */
             .section-content {
-                font-size: 2.6rem;
+                font-size: 2.2rem;
             }
             .project .name-tag {
                 /* extend colored background */

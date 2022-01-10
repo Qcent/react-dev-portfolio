@@ -13,6 +13,8 @@ import Resume from './components/Resume';
 import ContactForm from './components/ContactForm';
 import Portfolio from './components/Portfolio'
 
+//const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+
 function App() {
     const [areas] = useState([
         {
@@ -31,14 +33,15 @@ function App() {
     ]);
     const [currentArea, setCurrentArea] = useState(areas[0]);
 
-    return (<>
-        <Header
-            areas={areas}
-            setCurrentArea={setCurrentArea}
-            currentArea={currentArea} />
-        <Main currentArea={currentArea} />
-        <Footer />
-    </>
+    return (
+        <>
+            <Header
+                areas={areas}
+                setCurrentArea={setCurrentArea}
+                currentArea={currentArea} />
+            <Main currentArea={currentArea} />
+            <Footer />
+        </>
     );
 }
 
