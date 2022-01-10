@@ -562,6 +562,16 @@
         /* END OF SECTION Styling */
 
         /* RESUME Section */
+        .resume-link{
+            color: darkblue;
+        }
+        .resume-link:visited{
+          color: blueviolet;
+        }
+        .resume-link:hover{
+          color:var(--light-text);
+        }
+  
         ul.proficiencies{
             display: flex;
             flex-direction: column;
@@ -654,8 +664,7 @@
             /* keeps project card against edges of container */
             justify-content: space-between;
             /* make wider to better display the projects  */
-            width:90%;
-            max-width:90%;
+            width:80%;
         }
         
         .project-wrapper {
@@ -871,7 +880,7 @@
         }
         /* END OF MESSING AROUND */
         
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: ark) {
             /* MEDIA QUERY FOR DARK MODE */
             /* a reimagining of the layout in a nice darker format */
              :root {
@@ -1032,7 +1041,7 @@
             }
             .section-content {
                 /* increase width for smaller screens */
-                width:95%;
+                width:95% !important;
             }
             .section-title h2 {
                 font-size: 2.8rem;

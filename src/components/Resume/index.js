@@ -8,14 +8,25 @@ function Resume() {
       </div>
       <div className='section-content'>
         <h3>
-          Download my <a href='Dave_Quinn-Resume.pdf'>Resume</a> in .pdf format.
+          Download my <a href='Dave_Quinn-Resume.pdf' className='resume-link' target="_blank" rel="noreferrer">
+            Resume</a> in .pdf format.
         </h3><br />
-        <h3>Proficiencies</h3>
+        <h3>Front-End Proficiencies</h3>
         <ul className='proficiencies'>
-          <li>This</li>
-          <li>That</li>
-          <li>Tech</li>
-          <li>Code</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript/jQuery</li>
+          <li>BootStrap</li>
+          <li>React/JSX</li>
+        </ul>
+        <br />
+        <h3>Back-End Proficiencies</h3>
+        <ul className='proficiencies'>
+          <li>APIs</li>
+          <li>Node</li>
+          <li>Express</li>
+          <li>MySQL</li>
+          <li>MongoDB</li>
         </ul>
       </div>
     </section>

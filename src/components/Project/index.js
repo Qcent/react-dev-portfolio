@@ -20,7 +20,10 @@ function Project(props) {
           <p>{tech}</p>
         </div>
       </a>
-      <div className="git-link"><a href={repo} target="_blank" rel="noreferrer">{norepo ? "Sorry, No" : "GitHub"} Repository</a></div>
+      <div className="git-link">
+        <a href={repo} target="_blank" rel="noreferrer">
+          {norepo ? "Sorry, No" : "GitHub"} Repository</a>
+      </div>
     </span>
   );
 }
