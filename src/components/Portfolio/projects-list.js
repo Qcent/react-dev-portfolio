@@ -15,6 +15,13 @@ module.exports = [
         tech: "ServerSide APIs/jQuery/CSS"
     },
     {
+        id: "project-blog-site",
+        url: "https://qcent-blog-site.herokuapp.com/",
+        repo: "https://github.com/Qcent/blog-site",
+        title: "Blog Site",
+        tech: "Express/MVC/JavaScript"
+    },
+    {
         id: "project-robot-gladiators",
         url: "https://qcent.github.io/robot-gladiators/",
         repo: "https://github.com/Qcent/robot-gladiators",
