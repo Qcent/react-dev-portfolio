@@ -671,6 +671,8 @@
             justify-content: space-between;
             /* make wider to better display the projects  */
             width:80%;
+            /* place behind the headshot if needed */
+            z-index: 5;
         }
         
         .project-wrapper {
@@ -991,7 +993,7 @@
                 margin-left: 25%;
             }
             /* some elements are too small when this wide */
-            .section-content {
+            .section-content, input, textarea {
                 font-size: 1.1rem;
             }
             .project-wrapper {
@@ -1007,9 +1009,11 @@
         @media screen and (min-width: 1500px) {
             /* this will be applied on any screen larger than 1500px */
   
-            .section-content {
+            .section-content, input, textarea {
             /* text in section content is too small when this wide */
                 font-size: 1.5rem;
+            }
+            .section-content{
             /* let this take up more of the screen */
                 max-width: 80%;
             }
@@ -1018,7 +1022,8 @@
         @media screen and (min-width: 2000px) {
             /* this will be applied on any screen larger than 2000px */
             /* some vw based element scaling starts to break design when we hit this size */
-            .section-content {
+            .section-content,
+            input, textarea {
                 font-size: 2.2rem;
             }
             .project .name-tag {
