@@ -5,6 +5,7 @@
 
 This is a [Web Page](https://en.wikipedia.org/wiki/Web_page) to showcase my development work. Comprised of coding and web dev projects to highlight my talents to prospective employers. It was designed using React as a single page web application.
 
+[View the Site](https://qcent.github.io/) \
 Screenshot of Lightmode: \
 ![Light mode screenshot](./assets/app-screenshot-2.png)
 
