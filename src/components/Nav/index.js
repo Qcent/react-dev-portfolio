@@ -16,9 +16,9 @@ function Nav(props) {
             className={` ${currentArea.name === area.name && 'navActive'}`}
             key={area.name}
           >
-            <a href={`#${area.name}`} onClick={() => { setCurrentArea(area); }} >
+            <span onClick={() => { setCurrentArea(area); document.querySelector('#root').style.overflowY = 'hidden' }} >
               {area.name}
-            </a>
+            </span>
           </li>
         ))}
       </ul>

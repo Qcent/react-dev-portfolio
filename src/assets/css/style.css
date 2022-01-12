@@ -28,11 +28,17 @@
             transform: scale(2);
         }
         /* */
-        
+        #root{
+            display: flex;
+            flex-direction: column;
+            height:100vh; 
+            overflow: hidden;
+        }
+
         body {
             background-color: var(--background-col);
         }
-        
+
         p {
             /* spacing based on text size */
             margin-bottom: 1em;
@@ -207,7 +213,7 @@
             padding-bottom: 5px;
         }
         
-        nav li a {
+        nav li span {
             font-size: 1.5rem;
             color: var(--light-text);
             /* spacing between links */
@@ -249,7 +255,7 @@
             -webkit-transition-timing-function: ease-out;
             transition-timing-function: ease-out;
         }
-        .navActive a{
+        .navActive span{
            color:rgb(225, 228, 203);
            text-shadow: 0px 0px 2.8rem #ffffe4;  
         }
@@ -270,7 +276,6 @@
             transform: scale(1.06) rotate(.5deg);
         }
         
-        .navActive:nth-child(even),
         nav ul li:hover:nth-child(even),
         nav ul li:active:nth-child(even) {
             /* make every other element tilt counter clockwise */
@@ -488,12 +493,12 @@
             justify-content: flex-start;
             flex-direction: column;
         }
-        
+   
         main {
-            flex: 1;
+            flex: 1 ;
             /* keeps content off bottom edge of screen */
             margin-bottom: 2vw;
-            overflow: hidden; 
+             
         }
 
         main section {
@@ -879,7 +884,7 @@
         }
         /* END OF MESSING AROUND */
         
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: fdark) {
             /* MEDIA QUERY FOR DARK MODE */
             /* a reimagining of the layout in a nice darker format */
              :root {
@@ -897,15 +902,15 @@
             .project .name-tag {
                 background-color: var(--norm-text);
             }
-            nav li a {
+            nav li span {
                 color: var(--norm-text);
             }
-            .navActive a{
+            .navActive span{
                 color: var(--dark-select);
             }
-            .navActive a,
-            nav li a:hover,
-            nav li a:active {
+            .navActive span,
+            nav li span:hover,
+            nav li span:active {
                 border-color: var(--light-text);
             }
             .head-shot,
