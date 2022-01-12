@@ -3,9 +3,9 @@
 
 # Description
 
-This is a [Web Page](https://en.wikipedia.org/wiki/Web_page) to showcase my development work. Comprised of coding and web dev projects to highlight my tallents to prospective employers. It was designed using React as a single page web application.
+This is a [Web Page](https://en.wikipedia.org/wiki/Web_page) to showcase my development work. Comprised of coding and web dev projects to highlight my talents to prospective employers. It was designed using React as a single page web application.
 
-Screen Shot of Lightmode: \
+Screenshot of Lightmode: \
 ![Light mode screenshot](./assets/app-screenshot-2.png)
 
 ## Project Objectives
