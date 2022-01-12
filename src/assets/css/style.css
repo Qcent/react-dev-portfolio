@@ -884,7 +884,7 @@
         }
         /* END OF MESSING AROUND */
         
-        @media (prefers-color-scheme: fdark) {
+        @media (prefers-color-scheme: dark) {
             /* MEDIA QUERY FOR DARK MODE */
             /* a reimagining of the layout in a nice darker format */
              :root {
