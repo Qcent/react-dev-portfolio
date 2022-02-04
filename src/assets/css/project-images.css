@@ -1,5 +1,7 @@
      /* Project Background images */
-     
+     #project-savoury-subscriptions {
+        background-image: url('./../images/project-savoury-subscriptions.png');
+    }     
      #project-poseidons-trunk {
          background-image: url('./../images/project-poseidons-trunk.png');
      }

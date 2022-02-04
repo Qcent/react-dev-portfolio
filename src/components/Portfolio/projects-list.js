@@ -1,10 +1,18 @@
 module.exports = [
     {
+        id: "project-savoury-subscriptions",
+        url: "https://savoury-subscriptions.herokuapp.com/",
+        repo: "https://github.com/ScalexanderB/Savoury-Subscriptions",
+        title: "Savoury Subscriptions",
+        tech: "MERN/GraphQl"
+
+    },
+    {
         id: "project-poseidons-trunk",
         url: "https://project-team-poseidon.herokuapp.com/",
         repo: "https://github.com/Qcent/project-poseidon",
         title: "Poseidon's Trunk",
-        tech: "Express/MVC/Javascript"
+        tech: "Express/MVC/JavaScript"
 
     },
     {
