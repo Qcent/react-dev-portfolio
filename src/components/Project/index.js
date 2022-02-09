@@ -7,6 +7,7 @@ function Project(props) {
     repo,
     title,
     tech,
+    description,
     norepo
   } = props.project
 
@@ -17,7 +18,7 @@ function Project(props) {
         <div className="overlay-effect"></div>
         <div className="name-tag">
           <h3>{title}</h3>
-          <p>{tech}</p>
+          <p>{tech}<br />{description}</p>
         </div>
       </a>
       <div className="git-link">
