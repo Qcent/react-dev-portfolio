@@ -38,7 +38,7 @@ module.exports = [
     },
     {
         id: "project-robot-gladiators",
-        url: "https://qcent.github.io/robot-gladiators/",
+        url: "https://robotgladiators.herokuapp.com/",
         repo: "https://github.com/Qcent/robot-gladiators",
         title: "Robot Gladiators",
         tech: "jQuery/CSS/HTML",

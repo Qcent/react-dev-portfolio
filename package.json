@@ -15,6 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "update": "npm run build && cp -R build/* ../qcent.github.io && cd ../qcent.github.io && git add . && git commit -m 'updated portfolio' && git push",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
